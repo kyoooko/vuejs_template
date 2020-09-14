@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello,vue.js</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <!-- <div id="app"></div>の中がvue.jsの世界。appは任意の名前でいい-->
+  <div id="app">
+  <!-- data -->
+   <p>{{message}}</p>
+   <button v-on:click="clickHandler">click!</button>
+   <!-- フィルタ（ローカルフィルタ、グローバルフィルタ） -->
+   <h2>Mustache</h2>
+   <p>{{price | numberFormat}}</p>
+   <h2>b-bind</h2>
+   <input type="text" v-bind:value="price | numberFormat">
+   <h2>b-model</h2>
+   <input type="text" v-model="price">
+   <hr>
+
+
+
+
+
+
+   <!-- デバック用 -->
+   <!-- <pre>{{$data}}</pre> -->
+
+  <!-- コンポーネントを出力する場合 -->
+  <!-- <hello-component></hello-component> -->
+  </div>
+  <!-- ①vie.jsのCDNを先に読み込む。URLは公式ページから -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <!-- ②<script>下記のようにJSを別ファイルにしない場合はここにJSを書く</script> -->
+  <script src="js/main.js"></script>
+</body>
+</html>

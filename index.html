@@ -11,17 +11,26 @@
 <body>
   <!-- <div id="app"></div>の中がvue.jsの世界。appは任意の名前でいい-->
   <div id="app">
-  <!-- data -->
-   <p>{{message}}</p>
-   <button v-on:click="clickHandler">click!</button>
-   <!-- フィルタ（ローカルフィルタ、グローバルフィルタ） -->
-   <h2>Mustache</h2>
-   <p>{{price | numberFormat}}</p>
-   <h2>b-bind</h2>
-   <input type="text" v-bind:value="price | numberFormat">
-   <h2>b-model</h2>
-   <input type="text" v-model="price">
-   <hr>
+   <!-- ◆v-if とv-else -->
+   <p v-if="toggle">YES</p>
+   <p v-else>NO</p>
+
+   <!-- ◆v-else-if -->
+   <p v-if ="color === 'red'">Stop</p>
+   <p v-else-if ="color === 'yellow'">Caution</p>
+   <p v-else-if ="color === 'blue'">Go</p>
+   <p v-else >Not red/yellow/blue</p>
+
+   <!-- ◆v-show -->
+   <!-- v-showはv-elseとは連動しない -->
+   <p v-show="toggle">Hello,Vue.js!</p>
+
+   
+
+
+
+  
+   
 
 
 
@@ -30,16 +39,9 @@
 
    <!-- デバック用 -->
    <!-- <pre>{{$data}}</pre> -->
-
-  <!-- コンポーネントを出力する場合 -->
-  <!-- <hello-component></hello-component> -->
   </div>
   <!-- ①vie.jsのCDNを先に読み込む。URLは公式ページから -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <!-- API利用時例：axios -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script> -->
-  <!-- API利用時例：lodash -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script> -->
   <!-- ②<script>下記のようにJSを別ファイルにしない場合はここにJSを書く</script> -->
   <script src="js/main.js"></script>
 </body>
